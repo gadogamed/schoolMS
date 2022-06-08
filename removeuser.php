@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <h1> Remove</h1>
-</head>
-<form action="removeuser.php" method="get">
- ID: <input type="text" name ="id">
- <br>
- <input type="submit" value="remove">
-</form>
 <?php
+include_once "removeuser_view.php";
 $userid=$_GET["id"];
 $datafile=fopen("userdata.txt",'a+');
 $i=0;
@@ -28,7 +19,7 @@ while(!feof($datafile))
     $c = preg_replace("/$line/", '', $b);
     file_put_contents($a, $c);
     break;
- } 
+  } 
  $savedid=null;
  $line=null;
  $i=0;
